@@ -161,6 +161,33 @@
             color: #aaa;
         }
 
+        .video-card-link {
+            text-decoration: none;
+            /* 밑줄 제거 */
+            color: inherit;
+            display: block;
+        }
+
+        .video-card {
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .video-card-link:hover .video-card {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .thumbnail-img {
+            width: 100%;
+            border-radius: 12px;
+            transition: filter 0.2s ease;
+        }
+
+        .video-card-link:hover .thumbnail-img {
+            filter: brightness(0.9);
+        }
+
+
         /* 쇼츠 영역 */
         .shorts-section {
             margin-top: 40px;
@@ -235,16 +262,21 @@
             </div>
 
             <div class="video-list">
-                <div class="video-card">
-                    <img src="https://picsum.photos/id/1/320/180" class="thumbnail-img">
-                    <div class="video-info">
-                        <div class="profile-pic" style="background-color: #ff5252;"></div>
-                        <div class="video-text">
-                            <h3>다들 잘했겠지만 저는 처음이라 어려웠어요</h3>
-                            <p>울보 수인 • 조회수 1.6만회</p>
+                <a href="suin.html" class="video-card-link">
+                    <div class="video-card">
+                        <img src="https://i.namu.wiki/i/ds4ZSTgQhBQLABQfR1ECjk2QKOZ2UJTIN9XQTgd3HhJ7cIbKTOvZpw53F6KnLCK3EVBWAV83XLPtx4-eyV2QaQ.webp"
+                            class="thumbnail-img">
+
+                        <div class="video-info">
+                            <div class="profile-pic" style="background-color: #ff5252;"></div>
+                            <div class="video-text">
+                                <h3>행복해보이는 코기</h3>
+                                <p>나도 행복하고 싶다 • 조회수 1.6만회</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
+
 
                 <div class="video-card">
                     <img src="https://picsum.photos/id/10/320/180" class="thumbnail-img">
@@ -282,7 +314,8 @@
 
             <div class="shorts-section">
                 <div class="shorts-header">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Youtube_shorts_icon.svg/1649px-Youtube_shorts_icon.svg.png" style="width:24px; height:24px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Youtube_shorts_icon.svg/1649px-Youtube_shorts_icon.svg.png"
+                        style="width:24px; height:24px;">
                     <span>Shorts</span>
                 </div>
 
