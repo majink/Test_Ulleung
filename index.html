@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>내 첫 유튜브 화면</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f0f;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #0f0f0f;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo-area {
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .search-area {
+            display: flex;
+            border: 1px solid #333;
+            border-radius: 40px;
+            overflow: hidden;
+            background-color: #121212;
+        }
+
+        .search-area input {
+            background-color: transparent;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            width: 400px;
+            outline: none;
+        }
+
+        .search-area button {
+            background-color: #222;
+            border: none;
+            border-left: 1px solid #333;
+            color: white;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 200px;
+            padding: 10px;
+            background-color: #0f0f0f;
+            height: 100vh;
+        }
+
+        .menu-item {
+            padding: 12px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .menu-item:hover {
+            background-color: #272727;
+        }
+
+        .menu-item i {
+            margin-right: 20px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .filters {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            background-color: #272727;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .filter-btn.active {
+            background-color: white;
+            color: black;
+        }
+
+        .video-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .video-card {
+            width: 320px;
+            margin-bottom: 20px;
+        }
+
+        .thumbnail-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            background-color: #333;
+        }
+
+        .video-info {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .video-text h3 {
+            margin: 0 0 4px 0;
+            font-size: 16px;
+            font-weight: 500;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .video-text p {
+            margin: 0;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* 쇼츠 영역 */
+        .shorts-section {
+            margin-top: 40px;
+        }
+
+        .shorts-header {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            gap: 8px;
+        }
+
+        .shorts-list {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+        }
+
+        .shorts-card {
+            width: 150px;
+            flex-shrink: 0;
+        }
+
+        .shorts-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .shorts-card p {
+            margin-top: 8px;
+            font-size: 14px;
+            line-height: 1.3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo-area">
+            <i class="material-icons" style="color: red; margin-right: 5px; font-size: 30px;">play_circle_filled</i>
+            YouTube
+        </div>
+
+        <div class="search-area">
+            <input type="text" placeholder="검색">
+            <button><i class="material-icons" style="font-size: 20px;">search</i></button>
+        </div>
+
+        <div class="user-area">
+            <i class="material-icons">account_circle</i>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-item"><i class="material-icons">home</i> 홈</div>
+            <div class="menu-item"><i class="material-icons">subscriptions</i> 구독</div>
+            <div class="menu-item"><i class="material-icons">video_library</i> 보관함</div>
+        </div>
+
+        <div class="content">
+            <div class="filters">
+                <button class="filter-btn active">전체</button>
+                <button class="filter-btn">게임</button>
+                <button class="filter-btn">음악</button>
+                <button class="filter-btn">라이브</button>
+            </div>
+
+            <div class="video-list">
+                <div class="video-card">
+                    <img src="https://picsum.photos/id/1/320/180" class="thumbnail-img">
+                    <div class="video-info">
+                        <div class="profile-pic" style="background-color: #ff5252;"></div>
+                        <div class="video-text">
+                            <h3>다들 잘했겠지만 저는 처음이라 어려웠어요</h3>
+                            <p>울보 수인 • 조회수 1.6만회</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="https://picsum.photos/id/10/320/180" class="thumbnail-img">
+                    <div class="video-info">
+                        <div class="profile-pic" style="background-color: #448aff;"></div>
+                        <div class="video-text">
+                            <h3>어떻게 제가 이걸 한 건지 아세요?</h3>
+                            <p>저도 모르겠네요 • 조회수 41만회</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="https://picsum.photos/id/20/320/180" class="thumbnail-img">
+                    <div class="video-info">
+                        <div class="profile-pic" style="background-color: #4caf50;"></div>
+                        <div class="video-text">
+                            <h3>그래서 제가 이걸 어떻게 하냐고요...</h3>
+                            <p>우는 수인 • 조회수 17만회</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="https://picsum.photos/id/20/320/180" class="thumbnail-img">
+                    <div class="video-info">
+                        <div class="profile-pic" style="background-color: #4caf50;"></div>
+                        <div class="video-text">
+                            <h3>그래서 제가 이걸 어떻게 하냐고요...</h3>
+                            <p>우는 수인 • 조회수 17만회</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shorts-section">
+                <div class="shorts-header">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Youtube_shorts_icon.svg/1649px-Youtube_shorts_icon.svg.png" style="width:24px; height:24px;">
+                    <span>Shorts</span>
+                </div>
+
+                <div class="shorts-list">
+                    <div class="shorts-card">
+                        <img src="https://cdn.imweb.me/upload/S202002173b45b771075df/7e4c5fc68b41b.jpg">
+                        <p>수인이</p>
+                    </div>
+
+                    <div class="shorts-card">
+                        <img src="https://cdn.imweb.me/upload/S202002173b45b771075df/7e4c5fc68b41b.jpg">
+                        <p>레츠고</p>
+                    </div>
+
+                    <div class="shorts-card">
+                        <img src="https://cdn.imweb.me/upload/S202002173b45b771075df/7e4c5fc68b41b.jpg">
+                        <p>레츠기릿</p>
+                    </div>
+
+                    <div class="shorts-card">
+                        <img src="https://cdn.imweb.me/upload/S202002173b45b771075df/7e4c5fc68b41b.jpg">
+                        <p>해보자고</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
